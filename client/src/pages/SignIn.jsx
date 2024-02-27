@@ -85,7 +85,7 @@ export default function SignIn() {
                 </span>
                 </>
               ) :( 'Sign In'
-           )};
+           )}
             </Button>
             <OAuth />
             

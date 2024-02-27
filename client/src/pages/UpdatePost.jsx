@@ -14,40 +14,38 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-export default function UpdatePost() {  
+export default function UpdatePost() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
-  const {postId} = useParams();
+  const { postId } = useParams();
 
   const navigate = useNavigate();
-  const {currentUser} = useSelector((state) => state.user);
-
+    const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
-    try{
-        const fetchPost = async () => {
+    try {
+      const fetchPost = async () => {
         const res = await fetch(`/api/post/getposts?postId=${postId}`);
         const data = await res.json();
-        if (!res.ok){
-            console.log(data.message);
-            setPublishError(data.message);
-            return;
+        if (!res.ok) {
+          console.log(data.message);
+          setPublishError(data.message);
+          return;
         }
-        if (res.ok){
-            setPublishError(null);
-            setFormData(data.posts[0]);
+        if (res.ok) {
+          setPublishError(null);
+          setFormData(data.posts[0]);
         }
-        };
-        fetchPost();
+      };
 
-    }catch(error){
-        console.log(error.message);
+      fetchPost();
+    } catch (error) {
+      console.log(error.message);
     }
-
-  },[postId]);
+  }, [postId]);
 
   const handleUpdloadImage = async () => {
     try {
@@ -131,10 +129,11 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
+         
             <option value='uncategorized'>Select a category</option>
-            <option value='javascript'>JavaScript</option>
-            <option value='reactjs'>React.js</option>
-            <option value='nextjs'>Next.js</option>
+            <option value='travel'>Travel</option>
+            <option value='education'>Education</option>
+            <option value='finance'>Finance</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
@@ -182,7 +181,7 @@ export default function UpdatePost() {
           }}
         />
         <Button type='submit' gradientDuoTone='purpleToPink'>
-          Update Post
+          Update post
         </Button>
         {publishError && (
           <Alert className='mt-5' color='failure'>
