@@ -11,3 +11,7 @@ Efficient Backend Operations: Implemented robust backend functionality to ensure
 Seamless Content Management: Developed separate admin and user panels to simplify content management and provide better control over the website's content.
 CRUD Operations: Successfully implemented Create, Read, Update, and Delete operations to manage blog posts, ensuring a fully functional and interactive website.
 This project underscores my ability to create user-friendly web applications with strong back-end support, dynamic front-end experience, and complete CRUD functionality.
+
+![Screenshot 2024-08-01 at 11 33 03 PM](https://github.com/user-attachments/assets/07650c0d-aa53-4495-95e0-ec1c294654a1)
+![Screenshot 2024-08-01 at 11 33 40 PM](https://github.com/user-attachments/assets/870814c5-924f-4aa5-9be9-e25a6149c7e8)
+![Screenshot 2024-08-01 at 11 33 00 PM](https://github.com/user-attachments/assets/b028a3c0-b720-4929-8251-2ff625314ed4)
